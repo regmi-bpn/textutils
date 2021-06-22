@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Contact{% endblock title %}Home
+{% block body %}
+<div class="container-fluid, px=0 mb-4">
+    <img src="https://source.unsplash.com/1600x400/?phone" class="d-block w-100" alt="...">
+
+</div>
+<div class= "container mb-3 py-4">
+<h1 class="text-center"> Contact Us </h1>
+<form method="post" action="/contact">
+    {% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label"><b>Email address</b></label>
+    <input type="email" class="form-control" id="Email Address" aria-describedby="email" Name="email" placeholder="Enter Your Email Address">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="Name" class="form-label"><b>Name</b></label>
+    <input type="text" class="form-control" id="Name" Name="name" placeholder="Enter Your Name">
+  </div>
+  <div class="mb-3">
+    <label for="Phone" class="form-label"><b>Phone</b></label>
+    <input type="text" class="form-control" id="Phone" Name="phone" placeholder="Enter Your Phoone Number">
+  </div>
+  <div class="mb-3">
+  <label for="Description" class="form-label"><b>Description</b></label>
+  <textarea class="form-control" id="Description" Name="description" rows="3"  placeholder="Enter Your Description"></textarea> 
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Recieve Emails from the forum. </label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+{% endblock body %}
